@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LumberPlanet</string>
+    <string name="moneyText">$0.00</string>
 </resources>
