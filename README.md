@@ -33,12 +33,14 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
 - Na vyrobu potrebujes materialy (Drevo) ktore musis kupit za zarobene peniaze 
 - drevo da sa velmi zdlhavo ziskat manualne (ist zberat drevo do lesa za domom) ak nemas peniaze na kupu 
 
+- splnuje material design principy (pekne vyzera a dobre sa na nu pozera)
+
 ## Verzia 1:
-### Juraj:
--	Zobrazenie poctu peňazí
--	Zobrazenie poctu produktu (sparadla)
--	Kliknutím na tlačidlo sa vyrobí 1 produkt
--	Kliknutim na tlacidlo sa preda 1 produkt a prida sa 1 peniaz
+### Juraj: - DONE
+-	Zobrazenie poctu peňazí - DONE
+-	Zobrazenie poctu produktu (sparadla) - DONE
+-	Kliknutím na tlačidlo sa vyrobí 1 produkt - DONE
+-	Kliknutim na tlacidlo sa preda 1 produkt a prida sa 1 peniaz - DONE
 ### Patrik:
 - Zobrazenie poctu kupenych vyrabacov
 -	Kliknutim na tlacidlo sa kupi 1 automaticky "vyrabac" - prvy stoji 500, a kazdy dalsi stoji 120% ceny predchadzajuceho
