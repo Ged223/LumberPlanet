@@ -8,7 +8,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
 -	Zobrazenie poctu peňazí
 -	Zobrazenie poctu produktu
 -	Kliknutím na tlačidlo sa vyrobí produkt
--	Kliknutim na tlacidlo sa preda produktu
+-	Kliknutim na tlacidlo sa preda produkt
 -	Hráč môže nastaviť cenu za ktorú predáva produkty
 -	Podľa nastavenej ceny sa mení rýchlosť predávania produktov
 -	Kupovanie strojov ktoré automaticky budú vyrábať produkt bez toho aby musel hráč klikať
@@ -19,6 +19,8 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
 -	Pridanie viac produktov na výrobu ktoré postupne odomykáš, prvý produkt sú špáradla
 -	Achievementy
 -	hudba do pozadia
+- Zobrazenie mnozstva automaticky vyrobenych produktov za sekundu
+- Zobrazenie poctu automaticky predanych produktov za sekundu
 ## Verzia 1:
 ### Juraj:
 -	Zobrazenie poctu peňazí
@@ -26,5 +28,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
 -	Kliknutím na tlačidlo sa vyrobí 1 produkt
 -	Kliknutim na tlacidlo sa preda 1 produkt a prida sa $0.01
 ### Patrik:
--	Kupovanie strojov ktoré automaticky budú vyrábať produkt bez toho aby musel hráč klikať - prvy stoji $5.00, a kazdy dalsi stoji 120% ceny predchadzajuceho
-- Kupovanie predavacov ktory budu automaticky predavat produkt bez toho aby musel hrac klikat - prvy stoji $0.50, a kazdy dalsi stoji 120% ceny predchadzajuceho
+- Zobrazenie poctu kupenych vyrabacov
+-	Kliknutim na tlacidlo sa kupi 1 automaticky "vyrabac" - prvy stoji $5.00, a kazdy dalsi stoji 120% ceny predchadzajuceho
+-	Zobrazenie poctu kupenych predavacov
+- Kliknutim na tlacidlo sa kupi 1 automaticky "predavac" - prvy stoji $1.00`, a kazdy dalsi stoji 120% ceny predchadzajuceho
