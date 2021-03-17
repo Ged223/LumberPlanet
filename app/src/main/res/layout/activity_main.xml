@@ -50,4 +50,43 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/vyrabacText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Vyrabac: "
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/predavacText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Predavac: "
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="buyVyrabac"
+            android:text="buy Vyrabac" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="buyPredavac"
+            android:text="buy Predavac" />
+    </LinearLayout>
+
 </LinearLayout>

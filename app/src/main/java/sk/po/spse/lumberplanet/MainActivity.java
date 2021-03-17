@@ -37,5 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
         TextView toothpicksText = findViewById(R.id.toothpicksText);
         toothpicksText.setText(getString(R.string.toothpicksText) + game.getToothpicks());
+
+        TextView vyrabacText = findViewById(R.id.vyrabacText);
+        vyrabacText.setText("Vyrabac: " + game.getVyrabac());
+
+        TextView predavacText = findViewById(R.id.predavacText);
+        predavacText.setText("Predavac: " + game.getPredavac());
     }
 }
