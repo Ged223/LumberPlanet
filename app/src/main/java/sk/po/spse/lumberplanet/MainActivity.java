@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Timer;
@@ -31,6 +32,16 @@ public class MainActivity extends AppCompatActivity {
         updateDisplay();
     }
 
+    public void buyVyrabac(View view) {
+        game.buyVyrabac();
+        updateDisplay();
+    }
+
+    public void buyPredavac(View view) {
+        game.buyPredavac();
+        updateDisplay();
+    }
+
     private void updateDisplay() {
         TextView moneyText = findViewById(R.id.moneyText);
         moneyText.setText(getString(R.string.moneyText) + game.getMoney());
@@ -43,5 +54,11 @@ public class MainActivity extends AppCompatActivity {
 
         TextView predavacText = findViewById(R.id.predavacText);
         predavacText.setText("Predavac: " + game.getPredavac());
+
+        Button buyVyrabac = findViewById(R.id.buttonVyrabac);
+        buyVyrabac.setText("Vyrabac, cena: " + game.getVyrabacPrice());
+
+        Button buyPredavac = findViewById(R.id.buttonPredavac);
+        buyPredavac.setText("Predavac, cena: "+game.getPredavacPrice());
     }
 }
