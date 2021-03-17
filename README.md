@@ -33,6 +33,8 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -Zobrazenie poctu produktu (sparadla) - DONE
     -Kliknutím na tlačidlo sa vyrobí 1 produkt - DONE
     -Kliknutim na tlacidlo sa preda 1 produkt a prida sa 1 peniaz - DONE
+    -Kazdy vyrabac ktory hrac ma, vyrobi 1 produkt za 1 sekundu
+    -Kazdy predavac ktory hrac ma, preda 1 produkt za 1 sekundu
 ### Patrik:
     -Zobrazenie poctu kupenych vyrabacov - DONE
     -Kliknutim na tlacidlo sa kupi 1 automaticky "vyrabac" - prvy stoji 500, a kazdy dalsi stoji 120% ceny predchadzajuceho
