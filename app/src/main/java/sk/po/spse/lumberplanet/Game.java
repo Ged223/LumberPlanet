@@ -1,6 +1,6 @@
 package sk.po.spse.lumberplanet;
 
-public class Game {
+public class Game{
 
     private int money;
     private int toothpicks;

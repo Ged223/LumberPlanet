@@ -2,24 +2,43 @@ package sk.po.spse.lumberplanet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 public class MainActivity extends AppCompatActivity {
     private Game game;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 1*1000; //Delay for 1 second. (start "run" method in "onResume" every x seconds)
+    int delay = 1 * 1000; //Delay for 1 second. (start "run" method in "onResume" every x seconds)
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        game = getSavedObjectFromPreference(this,"gamePreference","gameClassKey",Game.class);
+        if(game == null){
+            game = new Game();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        saveObjectToSharedPreference(this,"gamePreference","gameClassKey", game);
+        super.onStop();
+    }
 
     @Override
     protected void onResume() {
         //start handler as activity become visible
 
-        handler.postDelayed( runnable = new Runnable() {
+        handler.postDelayed(runnable = new Runnable() {
             public void run() {
                 //this code runs every X seconds
                 game.advance();
@@ -31,19 +50,15 @@ public class MainActivity extends AppCompatActivity {
 
         super.onResume();
     }
+
     @Override
     protected void onPause() {
         handler.removeCallbacks(runnable); //stop handler when activity not visible
         super.onPause();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        game = new Game();
-    }
-    
+
+
     public void craftButton(View view) {
         game.craftToothpick();
         updateDisplay();
@@ -81,6 +96,24 @@ public class MainActivity extends AppCompatActivity {
         buyVyrabac.setText("Vyrabac, cena: " + game.getVyrabacPrice());
 
         Button buyPredavac = findViewById(R.id.buttonPredavac);
-        buyPredavac.setText("Predavac, cena: "+game.getPredavacPrice());
+        buyPredavac.setText("Predavac, cena: " + game.getPredavacPrice());
     }
-}
+
+    //https://stackoverflow.com/a/39435730
+    public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+        SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
+        final Gson gson = new Gson();
+        String serializedObject = gson.toJson(object);
+        sharedPreferencesEditor.putString(serializedObjectKey, serializedObject);
+        sharedPreferencesEditor.apply();
+    }
+
+    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context context, String preferenceFileName, String preferenceKey, Class<GenericClass> classType) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
+        if (sharedPreferences.contains(preferenceKey)) {
+            final Gson gson = new Gson();
+            return gson.fromJson(sharedPreferences.getString(preferenceKey, ""), classType);
+        }
+        return null;
+    }}
