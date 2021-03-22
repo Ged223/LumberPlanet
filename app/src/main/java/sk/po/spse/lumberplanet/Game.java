@@ -14,7 +14,7 @@ public class Game {
         this.toothpicks = toothpicks;
         this.vyrabac = vyrabac;
         this.predavac = predavac;
-        this.vyrabacPrice = 500;
+        this.vyrabacPrice = 250;
         this.predavacPrice = 100;
     }
 
@@ -22,17 +22,28 @@ public class Game {
         this(0, 0, 0, 0);
     }
 
-    public void craftToothpick() {
-        this.toothpicks++;
+    public void advance(){
+        craftToothpick(vyrabac);
+        sellToothpick(predavac);
     }
 
-    public boolean sellToothpick() {
-        if (toothpicks <= 0) {
-            return false;
+    public void craftToothpick(int amount){
+        toothpicks = toothpicks + amount;
+    }
+    public void craftToothpick() {
+        craftToothpick(1);
+    }
+
+    public void sellToothpick(int amount){
+        if(toothpicks < amount) {
+            amount = toothpicks;
         }
-        this.toothpicks--;
-        this.money++;
-        return true;
+        toothpicks = toothpicks - amount;
+        money = money + amount;
+
+    }
+    public void sellToothpick() {
+        sellToothpick(1);
     }
 
     public void buyVyrabac() {
