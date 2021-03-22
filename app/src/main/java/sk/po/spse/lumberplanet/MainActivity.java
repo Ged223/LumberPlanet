@@ -43,10 +43,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         game = new Game();
     }
-
-    //implement handler instead of Timer
-    //https://stackoverflow.com/questions/11434056/how-to-run-a-method-every-x-seconds
-
+    
     public void craftButton(View view) {
         game.craftToothpick();
         updateDisplay();
