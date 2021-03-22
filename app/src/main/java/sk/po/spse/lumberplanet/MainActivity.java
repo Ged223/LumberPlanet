@@ -8,10 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-
 public class MainActivity extends AppCompatActivity {
     private Game game;
     Handler handler = new Handler();
