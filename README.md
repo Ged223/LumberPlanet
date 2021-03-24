@@ -42,4 +42,4 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -Zobrazenie poctu kupenych predavacov - DONE
     -Kliknutim na tlacidlo sa kupi 1 automaticky "predavac" - prvy stoji 100, a kazdy dalsi stoji 120% ceny predchadzajuceho - DONE
     -Ukladanie postupu cez sharedPreferences - DONE
-    -Offline progress(aby hra postupovala aj ked je aplikacia vypnuta)
+    -Offline progress(aby hra postupovala aj ked je aplikacia vypnuta) - DONE
