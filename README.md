@@ -35,10 +35,11 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -Kliknutim na tlacidlo sa preda 1 produkt a prida sa 1 peniaz - DONE
     -Kazdy vyrabac ktory hrac ma, vyrobi 1 produkt za 1 sekundu - DONE
     -Kazdy predavac ktory hrac ma, preda 1 produkt za 1 sekundu - DONE
-    -Offline progress(aby hra postupovala aj ked je aplikacia vypnuta)
+  
 ### Patrik:
     -Zobrazenie poctu kupenych vyrabacov - DONE
     -Kliknutim na tlacidlo sa kupi 1 automaticky "vyrabac" - prvy stoji 500, a kazdy dalsi stoji 120% ceny predchadzajuceho - DONE
     -Zobrazenie poctu kupenych predavacov - DONE
     -Kliknutim na tlacidlo sa kupi 1 automaticky "predavac" - prvy stoji 100, a kazdy dalsi stoji 120% ceny predchadzajuceho - DONE
     -Ukladanie postupu cez sharedPreferences - DONE
+    -Offline progress(aby hra postupovala aj ked je aplikacia vypnuta)
