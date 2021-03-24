@@ -36,8 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        //advance for every second that the app was off
+        long diff = ((System.currentTimeMillis() - game.getLeaveTime())/1000);
+        game.advance(diff);
         //start handler as activity become visible
-
         handler.postDelayed(runnable = new Runnable() {
             public void run() {
                 //this code runs every X seconds
@@ -54,10 +56,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         handler.removeCallbacks(runnable); //stop handler when activity not visible
+        game.setLeaveTime(System.currentTimeMillis());
         super.onPause();
     }
-
-
 
     public void craftButton(View view) {
         game.craftToothpick();
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //https://stackoverflow.com/a/39435730
-    
+
     public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();

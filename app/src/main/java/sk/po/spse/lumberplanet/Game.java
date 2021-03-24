@@ -2,12 +2,13 @@ package sk.po.spse.lumberplanet;
 
 public class Game{
 
-    private int money;
-    private int toothpicks;
+    private long money;
+    private long toothpicks;
     private int vyrabac;
     private int predavac;
     private int vyrabacPrice;
     private int predavacPrice;
+    private long leaveTime;
 
     public Game(int money, int toothpicks, int vyrabac, int predavac) {
         this.money = money;
@@ -23,18 +24,21 @@ public class Game{
     }
 
     public void advance(){
-        craftToothpick(vyrabac);
-        sellToothpick(predavac);
+        advance(1);
+    }
+    public void advance(long amount){
+        craftToothpick(vyrabac*amount);
+        sellToothpick(predavac*amount);
     }
 
-    public void craftToothpick(int amount){
+    public void craftToothpick(long amount){
         toothpicks = toothpicks + amount;
     }
     public void craftToothpick() {
         craftToothpick(1);
     }
 
-    public void sellToothpick(int amount){
+    public void sellToothpick(long amount){
         if(toothpicks < amount) {
             amount = toothpicks;
         }
@@ -64,11 +68,11 @@ public class Game{
         predavacPrice*=1.2;
     }
 
-    public int getMoney() {
+    public long getMoney() {
         return money;
     }
 
-    public int getToothpicks() {
+    public long getToothpicks() {
         return toothpicks;
     }
 
@@ -86,5 +90,13 @@ public class Game{
 
     public int getPredavacPrice() {
         return predavacPrice;
+    }
+
+    public long getLeaveTime() {
+        return leaveTime;
+    }
+
+    public void setLeaveTime(long leaveTime) {
+        this.leaveTime = leaveTime;
     }
 }
