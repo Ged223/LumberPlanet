@@ -100,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //https://stackoverflow.com/a/39435730
+    
     public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
