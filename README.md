@@ -13,6 +13,8 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -Kliknutim na tlacidlo sa preda produkt
     -Kupovanie strojov ktoré automaticky budú vyrábať produkt bez toho aby musel hráč klikať
     -Kupovanie predavacov ktory budu automaticky predavat produkt bez toho aby musel hrac klikat
+    -Ukladanie postupu cez sharedPreferences
+    -Offline progress(aby hra postupovala aj ked je aplikacia vypnuta)
 ### Napady:
     -Hráč môže nastaviť cenu za ktorú predáva produkty
     -Podľa nastavenej ceny sa mení rýchlosť predávania produktov
