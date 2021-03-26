@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         //advance for every second that the app was off
-        long diff = ((System.currentTimeMillis() - game.getLeaveTime())/1000);
+        long diff = ((System.currentTimeMillis()/1000) - game.getLeaveTime());
         game.advance(diff);
         //start handler as activity become visible
         handler.postDelayed(runnable = new Runnable() {
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         handler.removeCallbacks(runnable); //stop handler when activity not visible
-        game.setLeaveTime(System.currentTimeMillis());
+        game.setLeaveTime(System.currentTimeMillis()/1000);
         super.onPause();
     }
 
