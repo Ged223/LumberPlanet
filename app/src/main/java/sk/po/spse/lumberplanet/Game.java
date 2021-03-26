@@ -15,7 +15,7 @@ public class Game{
         this.toothpicks = toothpicks;
         this.vyrabac = vyrabac;
         this.predavac = predavac;
-        this.vyrabacPrice = 250;
+        this.vyrabacPrice = 100;
         this.predavacPrice = 100;
     }
 
