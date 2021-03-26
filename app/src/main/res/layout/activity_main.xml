@@ -13,16 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
-        android:text="@string/moneyText"
+        android:text="$"
         android:textColor="@color/black"
-        android:textSize="32sp" />
+        android:textSize="32sp"
+        android:fontFamily="monospace"/>
 
     <TextView
         android:id="@+id/toothpicksText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/toothpicksText"
+        android:text="Toothpicks: "
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp" />

@@ -82,10 +82,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateDisplay() {
         TextView moneyText = findViewById(R.id.moneyText);
-        moneyText.setText(getString(R.string.moneyText) + game.getMoney());
+        moneyText.setText("$" + game.getMoney());
 
         TextView toothpicksText = findViewById(R.id.toothpicksText);
-        toothpicksText.setText(getString(R.string.toothpicksText) + game.getToothpicks());
+        toothpicksText.setText("Toothpicks: " + game.getToothpicks());
 
         TextView vyrabacText = findViewById(R.id.vyrabacText);
         vyrabacText.setText("Vyrabac: " + game.getVyrabac());

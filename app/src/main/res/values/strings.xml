@@ -3,8 +3,6 @@
     &#160; je unicode charakter medzery, xml automaticky odreze medzeru ak ju date normalne
     -->
     <string name="app_name">LumberPlanet</string>
-    <string name="moneyText">Money:&#160;</string>
-    <string name="toothpicksText">Toothpicks:&#160;</string>
     <string name="craftButtonText">craft</string>
     <string name="sellButtonText">sell</string>
 </resources>
