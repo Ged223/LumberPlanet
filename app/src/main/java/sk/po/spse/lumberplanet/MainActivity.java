@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -22,22 +23,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        game = getSavedObjectFromPreference(this,"gamePreference","gameClassKey",Game.class);
-        if(game == null){
+        game = getSavedObjectFromPreference(this, "gamePreference", "gameClassKey", Game.class);
+        if (game == null) {
             game = new Game();
         }
     }
 
     @Override
     protected void onStop() {
-        saveObjectToSharedPreference(this,"gamePreference","gameClassKey", game);
+        saveObjectToSharedPreference(this, "gamePreference", "gameClassKey", game);
         super.onStop();
     }
 
     @Override
     protected void onResume() {
         //advance for every second that the app was off
-        long diff = ((System.currentTimeMillis()/1000) - game.getLeaveTime());
+        long diff = ((System.currentTimeMillis() / 1000) - game.getLeaveTime());
         game.advance(diff);
         //start handler as activity become visible
         handler.postDelayed(runnable = new Runnable() {
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         handler.removeCallbacks(runnable); //stop handler when activity not visible
-        game.setLeaveTime(System.currentTimeMillis()/1000);
+        game.setLeaveTime(System.currentTimeMillis() / 1000);
         super.onPause();
     }
 
@@ -80,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
         updateDisplay();
     }
 
+    public void buyWoodButton(View view) {
+        game.buyWood();
+        updateDisplay();
+    }
+
+    public void findWoodButton(View view) {
+        //TODO
+    }
+
     private void updateDisplay() {
         TextView moneyText = findViewById(R.id.moneyText);
         moneyText.setText("$" + game.getMoney());
@@ -98,10 +108,12 @@ public class MainActivity extends AppCompatActivity {
 
         Button buyPredavac = findViewById(R.id.buttonPredavac);
         buyPredavac.setText("Predavac, cena: " + game.getPredavacPrice());
+
+        TextView woodText = findViewById(R.id.woodText);
+        woodText.setText("Wood: " + game.getWood());
     }
 
     //https://stackoverflow.com/a/39435730
-
     public static void saveObjectToSharedPreference(Context context, String preferenceFileName, String serializedObjectKey, Object object) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
         SharedPreferences.Editor sharedPreferencesEditor = sharedPreferences.edit();
@@ -118,4 +130,7 @@ public class MainActivity extends AppCompatActivity {
             return gson.fromJson(sharedPreferences.getString(preferenceKey, ""), classType);
         }
         return null;
-    }}
+    }
+
+
+}

@@ -13,10 +13,43 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
+        android:fontFamily="monospace"
         android:text="$"
         android:textColor="@color/black"
-        android:textSize="32sp"
-        android:fontFamily="monospace"/>
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/woodText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Wood: "
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="buyWoodButton"
+            android:text="Buy Wood" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:onClick="findWoodButton"
+            android:text="Look for wood" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/toothpicksText"
@@ -71,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonVyrabac"
