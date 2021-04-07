@@ -7,19 +7,38 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
 
 ## Funkcionality aplikácie:
 ### Este neimplementovane napady: (hore najvyssia priorita/najskor rozdelit na implementovanie do verzie):
-    -Kupovanie jednorazovych vylepšení na ručnú produkciu
-    -Kupovanie jednorazovych vylepšení na automatickú produkciu
     -Hráč môže nastaviť cenu za ktorú predáva produkty
     -Podľa nastavenej ceny sa mení rýchlosť predávania produktov
     -Online leaderboard na porovnanie svojho bohatstva s ostatnými hráčmi
     -Achievementy
-    -hudba do pozadia
     -splnuje material design principy (pekne vyzera a dobre sa na nu pozera)
-    -Zobrazenie mnozstva automaticky vyrobenych produktov za sekundu
-    -Zobrazenie poctu automaticky predanych produktov za sekundu
     -Pridanie viac produktov na výrobu ktoré postupne odomykáš, prvý produkt sú špáradla
     
-
+## Verzia 2:
+### Juraj:
+    -material (Drevo):
+        -zobrazenie poctu dreva (sklad dreva ma kapacitu 100 na zaciatku)
+        -tlacitko na kupovanie dreva (2 dreva kupis za $1 na zaciatku)
+    -Vytvorit premenne (v Game.java) na lahsie robenie upgradov neskor:
+        -int craftButtonMod(-ifier), pocet crafteni po stlaceni tlacitka, default 1
+        -int sellButtonMod, pocet predani po stlaceni tlacitka, default 1
+        -int vyrabacMod, pocet vyrobenych produktov 1 vyrabacom za 1 sekundu, default 1
+        -int predavacMod, pocet predanych produktov 1 predavacom za 1 sekundu, default 1
+        -double nextVyrabacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2
+        -double nextPredavacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2
+        -int toothpickPrice, kolko sa prida penazi pri predani 1 toothpicku, default 1
+        -int woodBuyAmount, kolko dreva sa kupi za 1$, default 2
+        
+### Patrik:
+    -material (Drevo):
+        -Drevo da sa velmi zdlhavo ziskat manualne (ist zberat drevo do lesa) ak nemas peniaze na kupu(stale sa da manualne ale iba vtedy sa to oplati)
+        -vyrobenim kazdeho toothpicku sa pouzije 1 drevo(nevyrobi sa nic ak nemas drevo)
+    -obrazok do pozadia co sa hodi,napr. les alebo daco take
+    -loop hudba co stale hraje
+    -malicke zvukove efekty napr. ked kupis upgrade/predavac/vyrabac
+    -Kupovanie jednorazovych vylepšení na ručnú produkciu
+    -Kupovanie jednorazovych vylepšení na automatickú produkciu
+    
 ## Verzia 1: (DONE)
 ### Juraj:
     -Zobrazenie poctu peňazí - DONE
@@ -37,26 +56,3 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -Ukladanie postupu cez sharedPreferences - DONE
     -Offline progress(aby hra postupovala aj ked je aplikacia vypnuta) - DONE
 
-## Verzia 2: (este rozdelujeme ulohy, bude sa to menit)
-### Juraj:
-    -material (Drevo):
-        -zobrazenie poctu dreva (sklad dreva ma kapacitu 100 na zaciatku)
-        -tlacitko na kupovanie dreva (2 dreva kupis za $1 na zaciatku)
-    -Vytvorit premenne (v Game.java) na lahsie robenie upgradov neskor:
-        -int craftButtonMod(-ifier), pocet crafteni po stlaceni tlacitka, default 1
-        -int sellButtonMod, pocet predani po stlaceni tlacitka, default 1
-        -int vyrabacMod, pocet vyrobenych produktov 1 vyrabacom za 1 sekundu, default 1
-        -int predavacMod, pocet predanych produktov 1 predavacom za 1 sekundu, default 1
-        -double nextVyrabacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2
-        -double nextPredavacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2
-        -int toothpickPrice, kolko sa prida penazi pri predani 1 toothpicku, default 1
-        -int woodBuyAmount, kolko dreva sa kupi za 1$, default 2
-        -nejake dalsie ktore mi este nenapadli teraz...
-        -...
-### Patrik:
-    -material (Drevo):
-        -Drevo da sa velmi zdlhavo ziskat manualne (ist zberat drevo do lesa) ak nemas peniaze na kupu(stale sa da manualne ale iba vtedy sa to oplati)
-        -vyrobenim kazdeho toothpicku sa pouzije 1 drevo(nevyrobi sa nic ak nemas drevo)
-    -nejaky obrazok do pozadia co sa hodi,napr. les alebo daco take
-    -nejaka loop hudba co stale hraje
-    -nejake malicke zvukove efekty napr. ked kupis upgrade/predavac/vyrabac
