@@ -19,6 +19,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -material (Drevo):
         -zobrazenie poctu dreva (sklad dreva ma kapacitu 100 na zaciatku)
         -tlacitko na kupovanie dreva (2 dreva kupis za $1 na zaciatku)
+    -pridat tlacitko na kompletny reset hry (na testovanie sa zide dost)    
     -Vytvorit premenne (v Game.java) na lahsie robenie upgradov neskor:
         -int craftButtonMod(-ifier), pocet crafteni po stlaceni tlacitka, default 1
         -int sellButtonMod, pocet predani po stlaceni tlacitka, default 1
