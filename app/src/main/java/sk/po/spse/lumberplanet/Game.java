@@ -5,7 +5,6 @@ public class Game {
     private long money;
     private long toothpicks;
     private long wood;
-    private long woodCapacity;
     private int vyrabac;
     private int predavac;
     private int vyrabacPrice;
@@ -20,7 +19,6 @@ public class Game {
         this.vyrabacPrice = 100;
         this.predavacPrice = 100;
         this.wood = 10;
-        this.woodCapacity = 100;
     }
 
     public Game() {
@@ -86,11 +84,7 @@ public class Game {
 
 
     public void buyWood() {
-        int amountToBuy = 2;// 2 is amount of wood bought with one button press
-        while(wood + amountToBuy > woodCapacity || amountToBuy == 0){
-            amountToBuy--;
-        }
-
+        int amountToBuy = 2;//quantity bought
         if (payMoney(1)) {//1 is the price of one wood buy
             wood = wood + amountToBuy;
         }
