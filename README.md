@@ -19,15 +19,17 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -material (Drevo): - DONE
         -zobrazenie poctu dreva (sklad dreva ma kapacitu 100 na zaciatku) - DONE
         -tlacitko na kupovanie dreva (2 dreva kupis za $1 na zaciatku) - DONE
-    -Vytvorit premenne (v Game.java) na lahsie robenie upgradov neskor:
-        -int craftButtonMod(-ifier), pocet crafteni po stlaceni tlacitka, default 1
-        -int sellButtonMod, pocet predani po stlaceni tlacitka, default 1
-        -int vyrabacMod, pocet vyrobenych produktov 1 vyrabacom za 1 sekundu, default 1
-        -int predavacMod, pocet predanych produktov 1 predavacom za 1 sekundu, default 1
-        -double nextVyrabacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2
-        -double nextPredavacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2
-        -int toothpickPrice, kolko sa prida penazi pri predani 1 toothpicku, default 1
-        -int woodBuyAmount, kolko dreva sa kupi za 1$, default 2
+    -Vytvorit premenne (v Game.java) na lahsie robenie upgradov neskor: - DONE
+        -int craftButtonMod(-ifier), pocet crafteni po stlaceni tlacitka, default 1 - DONE
+        -int sellButtonMod, pocet predani po stlaceni tlacitka, default 1 - DONE
+        -int vyrabacMod, pocet vyrobenych produktov 1 vyrabacom za 1 sekundu, default 1 - DONE
+        -int predavacMod, pocet predanych produktov 1 predavacom za 1 sekundu, default 1 - DONE
+        -double nextVyrabacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2 - DONE
+        -double nextPredavacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2 - DONE
+        -int toothpickPrice, kolko sa prida penazi pri predani 1 toothpicku, default 1 - DONE
+        -int woodBuyAmount, kolko dreva sa kupi za 1$, default 2 - DONE
+    -Urobit system vytvarania, zobrazovania a kupovania jednorazovych vylepseni
+        - asi nejaky cardview alebo scrollview, kde 1 element bude 1 vylepsenie
         
 ### Patrik:
     -material (Drevo):
@@ -36,8 +38,6 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -obrazok do pozadia co sa hodi,napr. les alebo daco take
     -loop hudba co stale hraje
     -malicke zvukove efekty napr. ked kupis upgrade/predavac/vyrabac
-    -Kupovanie jednorazovych vylepšení na ručnú produkciu
-    -Kupovanie jednorazovych vylepšení na automatickú produkciu
     
 ## Verzia 1: (DONE)
 ### Juraj:
