@@ -10,6 +10,14 @@ public class Game {
     private int vyrabacPrice;
     private int predavacPrice;
     private long leaveTime;
+    private int craftButtonMod;
+    private int sellButtonMod;
+    private int vyrabacMod;
+    private int predavacMod;
+    private double nextVyrabacPriceMod;
+    private double nextPredavacPriceMod;
+    private int toothpickPrice;
+    private int woodAmountBought;
 
     public Game(int money, int toothpicks, int vyrabac, int predavac) {
         this.money = money;
@@ -19,6 +27,14 @@ public class Game {
         this.vyrabacPrice = 100;
         this.predavacPrice = 100;
         this.wood = 10;
+        this.craftButtonMod = 1;
+        this.sellButtonMod = 1;
+        this.vyrabacMod = 1;
+        this.predavacMod = 1;
+        this.nextVyrabacPriceMod = 1.2;
+        this.nextPredavacPriceMod = 1.2;
+        this.toothpickPrice = 1;
+        this.woodAmountBought = 2;
     }
 
     public Game() {
@@ -30,12 +46,12 @@ public class Game {
     }
 
     public void advance(long amount) {
-        craftToothpick(vyrabac * amount);
-        sellToothpick(predavac * amount);
+        craftToothpick((vyrabac * vyrabacMod) * amount);
+        sellToothpick((predavac * predavacMod) * amount);
     }
 
     public void craftToothpick(long amount) {
-        if(amount > wood){
+        if (amount > wood) {
             amount = wood;
         }
         toothpicks = toothpicks + amount;
@@ -44,6 +60,10 @@ public class Game {
 
     public void craftToothpick() {
         craftToothpick(1);
+    }
+
+    public void craftButtonPressed() {
+        craftToothpick(1 * craftButtonMod);
     }
 
     private boolean payMoney(int amount) {
@@ -60,7 +80,7 @@ public class Game {
             amount = toothpicks;
         }
         toothpicks = toothpicks - amount;
-        money = money + amount;
+        money = money + (amount * toothpickPrice);
 
     }
 
@@ -68,25 +88,28 @@ public class Game {
         sellToothpick(1);
     }
 
+    public void sellButtonPressed() {
+        sellToothpick(1 * sellButtonMod);
+    }
+
     public void buyVyrabac() {
         if (payMoney(vyrabacPrice)) {
             vyrabac++;
-            vyrabacPrice *= 1.2;
+            vyrabacPrice *= nextVyrabacPriceMod;
         }
     }
 
     public void buyPredavac() {
         if (payMoney(predavacPrice)) {
             predavac++;
-            predavacPrice *= 1.2;
+            predavacPrice *= nextPredavacPriceMod;
         }
     }
 
 
     public void buyWood() {
-        int amountToBuy = 2;//quantity bought
         if (payMoney(1)) {//1 is the price of one wood buy
-            wood = wood + amountToBuy;
+            wood = wood + woodAmountBought;
         }
     }
 

@@ -62,12 +62,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void craftButton(View view) {
-        game.craftToothpick();
+        game.craftButtonPressed();
         updateDisplay();
     }
 
     public void sellButton(View view) {
-        game.sellToothpick();
+        game.sellButtonPressed();
         updateDisplay();
     }
 
