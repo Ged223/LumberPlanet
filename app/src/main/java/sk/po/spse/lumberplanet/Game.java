@@ -18,6 +18,7 @@ public class Game {
     private double nextPredavacPriceMod;
     private int toothpickPrice;
     private int woodAmountBought;
+    private long lastFoundWood;
 
     public Game(int money, int toothpicks, int vyrabac, int predavac) {
         this.money = money;
@@ -35,7 +36,10 @@ public class Game {
         this.nextPredavacPriceMod = 1.2;
         this.toothpickPrice = 1;
         this.woodAmountBought = 2;
+        this.lastFoundWood = System.currentTimeMillis();
     }
+
+
 
     public Game() {
         this(0, 0, 0, 0);
@@ -111,6 +115,16 @@ public class Game {
         if (payMoney(1)) {//1 is the price of one wood buy
             wood = wood + woodAmountBought;
         }
+    }
+
+    public void findWoodButtonPressed() {
+        if (lastFoundWood+5000<System.currentTimeMillis()) {
+            this.wood += 1;
+            lastFoundWood = System.currentTimeMillis();
+        }
+    }
+    public long getLastFoundWood() {
+        return lastFoundWood;
     }
 
     public long getWood() {

@@ -87,7 +87,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findWoodButton(View view) {
-        //TODO
+        game.findWoodButtonPressed();
+        Button findWoodButton = findViewById(R.id.findWoodButton);
+        findWoodButton.setEnabled(false);
+        updateDisplay();
     }
 
     private void updateDisplay() {
@@ -111,6 +114,11 @@ public class MainActivity extends AppCompatActivity {
 
         TextView woodText = findViewById(R.id.woodText);
         woodText.setText("Wood: " + game.getWood());
+
+        Button findWoodButton = findViewById(R.id.findWoodButton);
+        if (!findWoodButton.isEnabled()&&game.getLastFoundWood()+5000<System.currentTimeMillis()){
+            findWoodButton.setEnabled(true);
+        }
     }
 
     //https://stackoverflow.com/a/39435730
