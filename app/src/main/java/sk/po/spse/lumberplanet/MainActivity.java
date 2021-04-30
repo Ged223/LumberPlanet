@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         if (game == null) {
             game = new Game();
         }
+
+        //remove the app name bar on top of app
+        if(this.getSupportActionBar()!=null){
+            this.getSupportActionBar().hide();
+        }
+
     }
 
     @Override
