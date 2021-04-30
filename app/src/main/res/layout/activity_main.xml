@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Vyrabac: "
+        android:text="Crafter: "
         android:textSize="24sp" />
 
     <TextView
@@ -98,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Predavac: "
+        android:text="Seller: "
         android:textSize="24sp" />
 
     <LinearLayout
@@ -114,7 +114,7 @@
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:onClick="buyVyrabac"
-            android:text="buy Vyrabac" />
+            android:text="buy Crafter" />
 
         <Button
             android:id="@+id/buttonPredavac"
@@ -123,7 +123,7 @@
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:onClick="buyPredavac"
-            android:text="buy Predavac" />
+            android:text="buy Seller" />
     </LinearLayout>
 
 </LinearLayout>
