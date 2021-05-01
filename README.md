@@ -37,6 +37,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
         -vyrobenim kazdeho toothpicku sa pouzije 1 drevo(nevyrobi sa nic ak nemas drevo) - DONE
     -obrazok do pozadia co sa hodi,napr. les alebo daco take
     -malicke zvukove efekty napr. ked kupis upgrade/predavac/vyrabac
+    -pridat dalsie upgrady uz vymyslenim systemom
     
 ## Verzia 1: (DONE)
 ### Juraj:
