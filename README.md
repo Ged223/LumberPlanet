@@ -28,9 +28,9 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
         -double nextPredavacPriceMod, o kolko sa znasobi cena vyrabaca pri kupeni, default 1.2 - DONE
         -int toothpickPrice, kolko sa prida penazi pri predani 1 toothpicku, default 1 - DONE
         -int woodBuyAmount, kolko dreva sa kupi za 1$, default 2 - DONE
-    -Urobit system vytvarania, zobrazovania a kupovania jednorazovych vylepseni
-        - asi nejaky scrollview, kde 1 element bude 1 vylepsenie
-        - pridat prvy upgrade na testovanie: woodBuyAmount * 2, da sa kupit ked ma hrac vyrabac&&predavac >= 1   
+    -Urobit system vytvarania, zobrazovania a kupovania jednorazovych vylepseni - DONE
+        - dat celu aplikaciu do scrollview - DONE
+        - pridat prvy upgrade na testovanie: woodBuyAmount * 2, da sa kupit ked ma hrac vyrabac&&predavac >= 1   - DONE
 ### Patrik:
     -material (Drevo):
         -Drevo da sa velmi zdlhavo ziskat manualne - DONE
