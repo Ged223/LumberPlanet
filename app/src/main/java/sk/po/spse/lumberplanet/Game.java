@@ -19,6 +19,8 @@ public class Game {
     private int toothpickPrice;
     private int woodAmountBought;
     private long lastFoundWood;
+    private boolean[] upgradesBought;
+    private int upgradesAmount;
 
     public Game(int money, int toothpicks, int vyrabac, int predavac) {
         this.money = money;
@@ -37,6 +39,9 @@ public class Game {
         this.toothpickPrice = 1;
         this.woodAmountBought = 2;
         this.lastFoundWood = System.currentTimeMillis();
+
+        this.upgradesAmount = 1;
+        this.upgradesBought = new boolean[upgradesAmount];
     }
 
 
@@ -52,6 +57,25 @@ public class Game {
     public void advance(long amount) {
         craftToothpick((vyrabac * vyrabacMod) * amount);
         sellToothpick((predavac * predavacMod) * amount);
+    }
+
+    public boolean isUpgradeVisible(int index){
+        switch (index){
+            case 0: //Wood bought: x2\nPrice: $100
+                return (vyrabac>=1&&predavac>=1);
+
+            default:
+                return false;
+        }
+    }
+    public void buyUpgrade(int index){
+        switch (index){
+            case 0: //Wood bought: x2\nPrice: $100
+                if(payMoney(100)){
+                    woodAmountBought = woodAmountBought * 2;
+                    upgradesBought[0] = true;
+                }
+        }
     }
 
     public void craftToothpick(long amount) {
@@ -123,6 +147,11 @@ public class Game {
             lastFoundWood = System.currentTimeMillis();
         }
     }
+
+    public boolean[] getUpgradesBought() {
+        return upgradesBought;
+    }
+
     public long getLastFoundWood() {
         return lastFoundWood;
     }

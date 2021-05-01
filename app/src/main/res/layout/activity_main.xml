@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
     android:layout_marginTop="8dp"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -138,6 +138,34 @@
                     android:text="buy Seller" />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/upgradesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Upgrades:"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/upgrade0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="buyUpgrade"
+                    android:tag="0"
+                    android:text="Wood bought: x2\nPrice: $100"
+                    android:textAllCaps="false"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

@@ -125,6 +125,22 @@ public class MainActivity extends AppCompatActivity {
         if (!findWoodButton.isEnabled()&&game.getLastFoundWood()+5000<System.currentTimeMillis()){
             findWoodButton.setEnabled(true);
         }
+        
+        Button upgrade0 = findViewById(R.id.upgrade0);
+        boolean[] upgradesBought = game.getUpgradesBought();
+        if(game.isUpgradeVisible(0)){
+            upgrade0.setVisibility(View.VISIBLE);
+        }
+        if(upgradesBought[0]){
+            upgrade0.setVisibility(View.GONE);
+        }
+
+
+    }
+
+    public void buyUpgrade(View view) {
+        game.buyUpgrade(Integer.parseInt(view.getTag().toString()));
+        updateDisplay();
     }
 
     //https://stackoverflow.com/a/39435730
@@ -145,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
+
 
 
 }
