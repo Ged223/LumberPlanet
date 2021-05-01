@@ -29,7 +29,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
         -int toothpickPrice, kolko sa prida penazi pri predani 1 toothpicku, default 1 - DONE
         -int woodBuyAmount, kolko dreva sa kupi za 1$, default 2 - DONE
     -Urobit system vytvarania, zobrazovania a kupovania jednorazovych vylepseni
-        - asi nejaky cardview alebo scrollview, kde 1 element bude 1 vylepsenie
+        - asi nejaky scrollview, kde 1 element bude 1 vylepsenie
         
 ### Patrik:
     -material (Drevo):
