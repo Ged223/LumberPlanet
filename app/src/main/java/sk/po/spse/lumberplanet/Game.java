@@ -62,7 +62,7 @@ public class Game {
     public boolean isUpgradeVisible(int index){
         switch (index){
             case 0: //Wood bought: x2\nPrice: $100
-                return (vyrabac>=1&&predavac>=1);
+                return (vyrabac>=1&&predavac>=1);//condition for being able to buy upgrade0
 
             default:
                 return false;
@@ -71,9 +71,9 @@ public class Game {
     public void buyUpgrade(int index){
         switch (index){
             case 0: //Wood bought: x2\nPrice: $100
-                if(payMoney(100)){
-                    woodAmountBought = woodAmountBought * 2;
-                    upgradesBought[0] = true;
+                if(payMoney(100)){ //price for upgrade 0
+                    woodAmountBought = woodAmountBought * 2; //effect of buying upgrade
+                    upgradesBought[index] = true; //setting
                 }
         }
     }
