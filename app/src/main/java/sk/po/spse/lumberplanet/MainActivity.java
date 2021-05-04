@@ -111,10 +111,10 @@ public class MainActivity extends AppCompatActivity {
         toothpicksText.setText("Toothpicks: " + game.getToothpicks());
 
         TextView vyrabacText = findViewById(R.id.vyrabacText);
-        vyrabacText.setText("Crafter: " + game.getVyrabac());
+        vyrabacText.setText("Crafter: " + game.getVyrabac()+" ("+(game.getVyrabacMod()*game.getVyrabac())+")");
 
         TextView predavacText = findViewById(R.id.predavacText);
-        predavacText.setText("Seller: " + game.getPredavac());
+        predavacText.setText("Seller: " + game.getPredavac()+" ("+(game.getPredavacMod()*game.getPredavac())+")");
 
         Button buyVyrabac = findViewById(R.id.buttonVyrabac);
         buyVyrabac.setText("Crafter\nprice: " + game.getVyrabacPrice());

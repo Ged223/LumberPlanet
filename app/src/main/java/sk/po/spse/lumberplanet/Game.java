@@ -171,6 +171,14 @@ public class Game {
         }
     }
 
+    public int getVyrabacMod() {
+        return vyrabacMod;
+    }
+
+    public int getPredavacMod() {
+        return predavacMod;
+    }
+
     public String[] getUpgradesText() {
         return upgradesText;
     }
