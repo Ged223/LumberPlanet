@@ -8,7 +8,8 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
 ## Funkcionality aplikácie:
 ### Este neimplementovane napady: (hore najvyssia priorita/najskor rozdelit na implementovanie do verzie):
     -lifetime statistics
-    -
+    -ine produkty
+    -prestige (reset hry + nejaky significant upgrade co ostane po restarte)
     
 ## Verzia 2:
 ### Juraj:
@@ -27,14 +28,14 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -Urobit system vytvarania, zobrazovania a kupovania jednorazovych vylepseni - DONE
         - dat celu aplikaciu do scrollview - DONE
         - pridat prvy upgrade na testovanie: woodBuyAmount * 2, da sa kupit ked ma hrac vyrabac&&predavac >= 1 - DONE
-    -upgrade je sivy(disabled button) ak hrac ma menej penazi ako jeho cena
+    -tlacitko je sive(disabled button) ak hrac ma menej penazi ako cena - DONE
     -zobrazit (vyrabacMod * vyrabac) v riadku kde sa zobrazuje pocet crafterov(rovnako aj pre seller)
     
 ### Patrik:
     -material (Drevo): - DONE
         -Drevo da sa velmi zdlhavo ziskat manualne - DONE
         -vyrobenim kazdeho toothpicku sa pouzije 1 drevo(nevyrobi sa nic ak nemas drevo) - DONE
-    -pridat dalsie upgrady uz vymyslenim systemom
+    -pridat dalsie upgrady uz vymyslenim systemom - DONE
     
 ## Verzia 1: (DONE)
 ### Juraj:
