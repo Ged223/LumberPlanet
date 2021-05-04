@@ -20,7 +20,9 @@ public class Game {
     private int woodAmountBought;
     private long lastFoundWood;
     private boolean[] upgradesBought;
-    private int upgradesAmount;
+    private int[] upgradesPrices;
+    private String[] upgradesText;
+
 
     public Game(int money, int toothpicks, int vyrabac, int predavac) {
         this.money = money;
@@ -39,9 +41,15 @@ public class Game {
         this.toothpickPrice = 1;
         this.woodAmountBought = 2;
         this.lastFoundWood = System.currentTimeMillis();
-
-        this.upgradesAmount = 99;
-        this.upgradesBought = new boolean[upgradesAmount];
+        this.upgradesBought = new boolean[99];
+        this.upgradesPrices = new int[]{
+                100,
+                200
+        };//here set prices for upgrades
+        this.upgradesText = new String[]{
+                "Wood bought: x2\nPrice: "+upgradesPrices[0],
+                "Manual crafting x2\nPrice: "+upgradesPrices[1]
+        };
     }
 
 
@@ -72,12 +80,12 @@ public class Game {
     public void buyUpgrade(int index){
         switch (index){
             case 0: //Wood bought: x2\nPrice: $100
-                if(payMoney(100)){ //price for upgrade 0
+                if(payMoney(upgradesPrices[index])){
                     woodAmountBought = woodAmountBought * 2; //effect of buying upgrade
                     upgradesBought[index] = true; //setting
                 }
             case 1: //Manual crafting x2\nPrice: $200
-                if(payMoney(200)){
+                if(payMoney(upgradesPrices[index])){
                     craftButtonMod = craftButtonMod * 2;
                     upgradesBought[index] = true;
                 }
@@ -152,6 +160,14 @@ public class Game {
             this.wood += 1;
             lastFoundWood = System.currentTimeMillis();
         }
+    }
+
+    public String[] getUpgradesText() {
+        return upgradesText;
+    }
+
+    public int[] getUpgradesPrices() {
+        return upgradesPrices;
     }
 
     public boolean[] getUpgradesBought() {

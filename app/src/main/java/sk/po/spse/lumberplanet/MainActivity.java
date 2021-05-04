@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //remove the app name bar on top of app
-        if(this.getSupportActionBar()!=null){
+        if (this.getSupportActionBar() != null) {
             this.getSupportActionBar().hide();
         }
 
@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 handler.postDelayed(runnable, delay);
             }
         }, delay);
+
+        setUpgradeButtonsText();
 
         super.onResume();
     }
@@ -122,28 +124,51 @@ public class MainActivity extends AppCompatActivity {
         woodText.setText("Wood: " + game.getWood());
 
         Button findWoodButton = findViewById(R.id.findWoodButton);
-        if (!findWoodButton.isEnabled()&&game.getLastFoundWood()+5000<System.currentTimeMillis()){
+        if (!findWoodButton.isEnabled() && game.getLastFoundWood() + 5000 < System.currentTimeMillis()) {
             findWoodButton.setEnabled(true);
         }
 
+        updateUpgradeButtons();
+
+    }
+
+    private Button[] getUpgradeButtonsList(){
+        Button[] buttons = {findViewById(R.id.upgrade0), findViewById(R.id.upgrade1)};//add new buttons here
+        return buttons;
+    }
+
+    private void updateUpgradeButtons() {
         boolean[] upgradesBought = game.getUpgradesBought();
+        int[] upgradesPrices = game.getUpgradesPrices();
+        long currentMoney = game.getMoney();
 
-        Button upgrade0 = findViewById(R.id.upgrade0);
-        if(game.isUpgradeVisible(0)){
-            upgrade0.setVisibility(View.VISIBLE);
-        }
-        if(upgradesBought[0]){
-            upgrade0.setVisibility(View.GONE);
-        }
+        Button[] buttons = getUpgradeButtonsList();
 
-        Button upgrade1 = findViewById(R.id.upgrade1);
-        if(game.isUpgradeVisible(1)){
-            upgrade1.setVisibility(View.VISIBLE);
-        }
-        if(upgradesBought[1]){
-            upgrade1.setVisibility(View.GONE);
-        }
+        for (int i = 0; i < buttons.length; i++) {
+            Button button = buttons[i];
 
+            if (game.isUpgradeVisible(i)) {
+                button.setVisibility(View.VISIBLE);
+            }
+            if (upgradesBought[i]) {
+                button.setVisibility(View.GONE);
+            }
+            if (currentMoney < upgradesPrices[i]) {
+                button.setEnabled(false);
+            } else if (!button.isEnabled()) {
+                button.setEnabled(true);
+            }
+
+        }
+    }
+
+    private void setUpgradeButtonsText(){
+        Button[] buttons = getUpgradeButtonsList();
+        String[] texts = game.getUpgradesText();
+        for (int i = 0; i < buttons.length; i++) {
+            Button button = buttons[i];
+            button.setText(texts[i]);
+        }
     }
 
     public void buyUpgrade(View view) {
@@ -169,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
-
 
 
 }
