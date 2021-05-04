@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateDisplay() {
+        long currentMoney = game.getMoney();
+
         TextView moneyText = findViewById(R.id.moneyText);
         moneyText.setText("$" + game.getMoney());
 
@@ -116,9 +118,11 @@ public class MainActivity extends AppCompatActivity {
 
         Button buyVyrabac = findViewById(R.id.buttonVyrabac);
         buyVyrabac.setText("Crafter\nprice: " + game.getVyrabacPrice());
+        buyVyrabac.setEnabled(currentMoney >= game.getVyrabacPrice());
 
         Button buyPredavac = findViewById(R.id.buttonPredavac);
         buyPredavac.setText("Seller\nprice: " + game.getPredavacPrice());
+        buyPredavac.setEnabled(currentMoney >= game.getVyrabacPrice());
 
         TextView woodText = findViewById(R.id.woodText);
         woodText.setText("Wood: " + game.getWood());
@@ -127,9 +131,8 @@ public class MainActivity extends AppCompatActivity {
         if (!findWoodButton.isEnabled() && game.getLastFoundWood() + 5000 < System.currentTimeMillis()) {
             findWoodButton.setEnabled(true);
         }
-
+        
         updateUpgradeButtons();
-
     }
 
     private Button[] getUpgradeButtonsList(){
@@ -159,11 +162,7 @@ public class MainActivity extends AppCompatActivity {
             if (upgradesBought[i]) {
                 button.setVisibility(View.GONE);
             }
-            if (currentMoney < upgradesPrices[i]) {
-                button.setEnabled(false);
-            } else if (!button.isEnabled()) {
-                button.setEnabled(true);
-            }
+            button.setEnabled(currentMoney >= upgradesPrices[i]);
 
         }
     }
