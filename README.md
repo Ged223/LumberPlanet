@@ -30,7 +30,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -upgrade je sivy(disabled button) ak hrac ma menej penazi ako jeho cena
     
 ### Patrik:
-    -material (Drevo):
+    -material (Drevo): - DONE
         -Drevo da sa velmi zdlhavo ziskat manualne - DONE
         -vyrobenim kazdeho toothpicku sa pouzije 1 drevo(nevyrobi sa nic ak nemas drevo) - DONE
     -malicke zvukove efekty napr. ked kupis upgrade/predavac/vyrabac
