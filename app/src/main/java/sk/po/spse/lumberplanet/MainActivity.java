@@ -125,9 +125,10 @@ public class MainActivity extends AppCompatActivity {
         if (!findWoodButton.isEnabled()&&game.getLastFoundWood()+5000<System.currentTimeMillis()){
             findWoodButton.setEnabled(true);
         }
-        
-        Button upgrade0 = findViewById(R.id.upgrade0);
+
         boolean[] upgradesBought = game.getUpgradesBought();
+
+        Button upgrade0 = findViewById(R.id.upgrade0);
         if(game.isUpgradeVisible(0)){
             upgrade0.setVisibility(View.VISIBLE);
         }
@@ -135,6 +136,13 @@ public class MainActivity extends AppCompatActivity {
             upgrade0.setVisibility(View.GONE);
         }
 
+        Button upgrade1 = findViewById(R.id.upgrade1);
+        if(game.isUpgradeVisible(1)){
+            upgrade1.setVisibility(View.VISIBLE);
+        }
+        if(upgradesBought[1]){
+            upgrade1.setVisibility(View.GONE);
+        }
 
     }
 

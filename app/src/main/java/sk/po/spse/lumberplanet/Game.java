@@ -40,7 +40,7 @@ public class Game {
         this.woodAmountBought = 2;
         this.lastFoundWood = System.currentTimeMillis();
 
-        this.upgradesAmount = 1;
+        this.upgradesAmount = 99;
         this.upgradesBought = new boolean[upgradesAmount];
     }
 
@@ -63,7 +63,8 @@ public class Game {
         switch (index){
             case 0: //Wood bought: x2\nPrice: $100
                 return (vyrabac>=1&&predavac>=1);//condition for being able to buy upgrade0
-
+            case 1: //Manual crafting x2\nPrice: $200
+                return (vyrabac>=2&&predavac>=2);
             default:
                 return false;
         }
@@ -74,6 +75,11 @@ public class Game {
                 if(payMoney(100)){ //price for upgrade 0
                     woodAmountBought = woodAmountBought * 2; //effect of buying upgrade
                     upgradesBought[index] = true; //setting
+                }
+            case 1: //Manual crafting x2\nPrice: $200
+                if(payMoney(200)){
+                    craftButtonMod = craftButtonMod * 2;
+                    upgradesBought[index] = true;
                 }
         }
     }

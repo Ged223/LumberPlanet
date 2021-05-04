@@ -164,6 +164,17 @@
                     android:textAllCaps="false"
                     android:visibility="gone" />
 
+                <Button
+                    android:id="@+id/upgrade1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:onClick="buyUpgrade"
+                    android:tag="1"
+                    android:text="Manual crafting x2\nPrice: $200"
+                    android:textAllCaps="false"
+                    android:visibility="gone" />
+
 
             </LinearLayout>
 
