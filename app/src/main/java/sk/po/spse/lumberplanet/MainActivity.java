@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         if (!findWoodButton.isEnabled() && game.getLastFoundWood() + 5000 < System.currentTimeMillis()) {
             findWoodButton.setEnabled(true);
         }
-        
+
         updateUpgradeButtons();
     }
 
