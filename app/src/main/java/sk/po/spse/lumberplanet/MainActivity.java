@@ -135,7 +135,9 @@ public class MainActivity extends AppCompatActivity {
     private Button[] getUpgradeButtonsList(){
         Button[] buttons = {
                 findViewById(R.id.upgrade0),
-                findViewById(R.id.upgrade1)
+                findViewById(R.id.upgrade1),
+                findViewById(R.id.upgrade2),
+                findViewById(R.id.upgrade3),
 
         };//add new buttons here
         return buttons;

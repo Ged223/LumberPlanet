@@ -44,11 +44,15 @@ public class Game {
         this.upgradesBought = new boolean[99];
         this.upgradesPrices = new int[]{
                 100,
-                200
+                200,
+                300,
+                500,
         };//here set prices for upgrades
         this.upgradesText = new String[]{
                 "Wood bought: x2\nPrice: "+upgradesPrices[0],
-                "Manual crafting x2\nPrice: "+upgradesPrices[1]
+                "Manual crafting x2\nPrice: "+upgradesPrices[1],
+                "Manual selling x2\nPrice: "+upgradesPrices[2],
+                "Wood bought: x2\nPrice: "+upgradesPrices[3],
         };
     }
 
@@ -73,6 +77,10 @@ public class Game {
                 return (vyrabac>=1&&predavac>=1);//condition for being able to buy upgrade0
             case 1: //Manual crafting x2\nPrice: $200
                 return (vyrabac>=2&&predavac>=2);
+            case 2: //Manual selling x2\nPrice: $300
+                return (vyrabac>=3&&predavac>=3);
+            case 3: //Wood bought: x2\nPrice: $500
+                return (vyrabac>=5&&predavac>=5);
             default:
                 return false;
         }
@@ -87,6 +95,16 @@ public class Game {
             case 1: //Manual crafting x2\nPrice: $200
                 if(payMoney(upgradesPrices[index])){
                     craftButtonMod = craftButtonMod * 2;
+                    upgradesBought[index] = true;
+                }
+            case 2: //Manual selling x2\nPrice: $200
+                if(payMoney(upgradesPrices[index])){
+                    sellButtonMod = sellButtonMod * 2;
+                    upgradesBought[index] = true;
+                }
+            case 3: //Wood bought: x2\nPrice: $500
+                if(payMoney(upgradesPrices[index])) {
+                    woodAmountBought = woodAmountBought * 2;
                     upgradesBought[index] = true;
                 }
         }
