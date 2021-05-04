@@ -28,6 +28,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
         - dat celu aplikaciu do scrollview - DONE
         - pridat prvy upgrade na testovanie: woodBuyAmount * 2, da sa kupit ked ma hrac vyrabac&&predavac >= 1 - DONE
     -upgrade je sivy(disabled button) ak hrac ma menej penazi ako jeho cena
+    -zobrazit (vyrabacMod * vyrabac) v riadku kde sa zobrazuje pocet crafterov(rovnako aj pre seller)
     
 ### Patrik:
     -material (Drevo): - DONE
