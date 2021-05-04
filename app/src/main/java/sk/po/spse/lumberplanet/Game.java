@@ -46,19 +46,27 @@ public class Game {
                 100,
                 200,
                 300,
-                500,
+                100,
+                100,
+                100,
+                100,
+                1000,
         };//here set prices for upgrades
         this.upgradesText = new String[]{
                 "Wood bought: x2\nPrice: " + upgradesPrices[0],
                 "Manual crafting x2\nPrice: " + upgradesPrices[1],
                 "Manual selling x2\nPrice: " + upgradesPrices[2],
                 "Wood bought: x2\nPrice: " + upgradesPrices[3],
+                "Wood bought: x2\nPrice: " + upgradesPrices[4],
+                "Wood bought: x2\nPrice: " + upgradesPrices[5],
+                "Wood bought: x2\nPrice: " + upgradesPrices[6],
+                "Crafter and Seller 200%: " + upgradesPrices[7],
         };
     }
 
 
     public Game() {
-        this(0, 0, 0, 0);
+        this(200000, 0, 0, 0);
     }
 
     public void advance() {
@@ -79,7 +87,15 @@ public class Game {
             case 2: //Manual selling x2\nPrice: $300
                 return (vyrabac >= 3 && predavac >= 3);
             case 3: //Wood bought: x2\nPrice: $500
+                return (vyrabac >= 2 && predavac >= 2);
+            case 4: //Wood bought: x2\nPrice: $500
+                return (vyrabac >= 3 && predavac >= 3);
+            case 5: //Wood bought: x2\nPrice: $500
+                return (vyrabac >= 4 && predavac >= 4);
+            case 6: //Wood bought: x2\nPrice: $500
                 return (vyrabac >= 5 && predavac >= 5);
+            case 7:
+                return (vyrabac >= 6 && predavac >=6);
             default:
                 return false;
         }
@@ -90,12 +106,29 @@ public class Game {
             switch (index) {
                 case 0: //Wood bought: x2\nPrice: $100
                     woodAmountBought = woodAmountBought * 2; //effect of buying upgrade
+                    break;
                 case 1: //Manual crafting x2\nPrice: $200
                     craftButtonMod = craftButtonMod * 2;
+                    break;
                 case 2: //Manual selling x2\nPrice: $200
                     sellButtonMod = sellButtonMod * 2;
+                    break;
                 case 3: //Wood bought: x2\nPrice: $500
                     woodAmountBought = woodAmountBought * 2;
+                    break;
+                case 4: //Wood bought: x2\nPrice: $500
+                    woodAmountBought = woodAmountBought * 2;
+                    break;
+                case 5: //Wood bought: x2\nPrice: $500
+                    woodAmountBought = woodAmountBought * 2;
+                    break;
+                case 6: //Wood bought: x2\nPrice: $500
+                    woodAmountBought = woodAmountBought * 2;
+                    break;
+                case 7:
+                    vyrabacMod = vyrabacMod*2;
+                    predavacMod = predavacMod*2;
+                    break;
             }
             upgradesBought[index] = true;
         }

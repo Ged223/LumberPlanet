@@ -141,6 +141,10 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.upgrade1),
                 findViewById(R.id.upgrade2),
                 findViewById(R.id.upgrade3),
+                findViewById(R.id.upgrade4),
+                findViewById(R.id.upgrade5),
+                findViewById(R.id.upgrade6),
+                findViewById(R.id.upgrade7),
 
         };//add new buttons here
         return buttons;
