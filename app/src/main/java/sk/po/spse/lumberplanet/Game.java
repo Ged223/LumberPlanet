@@ -49,13 +49,12 @@ public class Game {
                 500,
         };//here set prices for upgrades
         this.upgradesText = new String[]{
-                "Wood bought: x2\nPrice: "+upgradesPrices[0],
-                "Manual crafting x2\nPrice: "+upgradesPrices[1],
-                "Manual selling x2\nPrice: "+upgradesPrices[2],
-                "Wood bought: x2\nPrice: "+upgradesPrices[3],
+                "Wood bought: x2\nPrice: " + upgradesPrices[0],
+                "Manual crafting x2\nPrice: " + upgradesPrices[1],
+                "Manual selling x2\nPrice: " + upgradesPrices[2],
+                "Wood bought: x2\nPrice: " + upgradesPrices[3],
         };
     }
-
 
 
     public Game() {
@@ -71,42 +70,34 @@ public class Game {
         sellToothpick((predavac * predavacMod) * amount);
     }
 
-    public boolean isUpgradeVisible(int index){
-        switch (index){
+    public boolean isUpgradeVisible(int index) {
+        switch (index) {
             case 0: //Wood bought: x2\nPrice: $100
-                return (vyrabac>=1&&predavac>=1);//condition for being able to buy upgrade0
+                return (vyrabac >= 1 && predavac >= 1);//condition for being able to buy upgrade0
             case 1: //Manual crafting x2\nPrice: $200
-                return (vyrabac>=2&&predavac>=2);
+                return (vyrabac >= 2 && predavac >= 2);
             case 2: //Manual selling x2\nPrice: $300
-                return (vyrabac>=3&&predavac>=3);
+                return (vyrabac >= 3 && predavac >= 3);
             case 3: //Wood bought: x2\nPrice: $500
-                return (vyrabac>=5&&predavac>=5);
+                return (vyrabac >= 5 && predavac >= 5);
             default:
                 return false;
         }
     }
-    public void buyUpgrade(int index){
-        switch (index){
-            case 0: //Wood bought: x2\nPrice: $100
-                if(payMoney(upgradesPrices[index])){
+
+    public void buyUpgrade(int index) {
+        if (payMoney(upgradesPrices[index])) {
+            switch (index) {
+                case 0: //Wood bought: x2\nPrice: $100
                     woodAmountBought = woodAmountBought * 2; //effect of buying upgrade
-                    upgradesBought[index] = true; //setting
-                }
-            case 1: //Manual crafting x2\nPrice: $200
-                if(payMoney(upgradesPrices[index])){
+                case 1: //Manual crafting x2\nPrice: $200
                     craftButtonMod = craftButtonMod * 2;
-                    upgradesBought[index] = true;
-                }
-            case 2: //Manual selling x2\nPrice: $200
-                if(payMoney(upgradesPrices[index])){
+                case 2: //Manual selling x2\nPrice: $200
                     sellButtonMod = sellButtonMod * 2;
-                    upgradesBought[index] = true;
-                }
-            case 3: //Wood bought: x2\nPrice: $500
-                if(payMoney(upgradesPrices[index])) {
+                case 3: //Wood bought: x2\nPrice: $500
                     woodAmountBought = woodAmountBought * 2;
-                    upgradesBought[index] = true;
-                }
+            }
+            upgradesBought[index] = true;
         }
     }
 
@@ -174,7 +165,7 @@ public class Game {
     }
 
     public void findWoodButtonPressed() {
-        if (lastFoundWood+5000<System.currentTimeMillis()) {
+        if (lastFoundWood + 5000 < System.currentTimeMillis()) {
             this.wood += 1;
             lastFoundWood = System.currentTimeMillis();
         }
