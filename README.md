@@ -11,7 +11,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -lifetime statistics
     -ine produkty
     -prestige (reset hry + nejaky significant upgrade co ostane po restarte)
-    
+    -opravit bug (disabled tlacitko na kupenie sellera ked nema byt disabled lebo sa pouziva cena craftera na disablovanie)
 ## Verzia 2:
 ### Juraj:
     -material (Drevo): - DONE
