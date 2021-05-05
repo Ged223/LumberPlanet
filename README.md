@@ -7,6 +7,7 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
 
 ## Funkcionality aplikácie:
 ### Este neimplementovane napady: (hore najvyssia priorita/najskor rozdelit na implementovanie do verzie):
+    -vizualne zmeny, pridanie ikoniek
     -lifetime statistics
     -ine produkty
     -prestige (reset hry + nejaky significant upgrade co ostane po restarte)
