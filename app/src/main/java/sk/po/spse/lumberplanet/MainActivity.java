@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button buyPredavac = findViewById(R.id.buttonPredavac);
         buyPredavac.setText("Seller\nprice: " + game.getPredavacPrice());
-        buyPredavac.setEnabled(currentMoney >= game.getVyrabacPrice());
+        buyPredavac.setEnabled(currentMoney >= game.getPredavacPrice());
 
         TextView woodText = findViewById(R.id.woodText);
         woodText.setText("Wood: " + game.getWood());

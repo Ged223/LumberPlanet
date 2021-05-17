@@ -66,7 +66,7 @@ public class Game {
 
 
     public Game() {
-        this(0, 0, 0, 0);
+        this(1000000, 0, 0, 0);
     }
 
     public void advance() {
