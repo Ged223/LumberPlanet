@@ -15,8 +15,8 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -opravit bug disablovanie tlacitka na seller - DONE
     -lifetime statistics pocitanie:
         -long moneyMade - DONE
-        -int toothpicksCrafted
-        -int woodBought
+        -long toothpicksCrafted
+        -long woodBought
     -pridat dalsie upgrady par ktore pouzivaju lifetime statistics
 ### Patrik:
     -vizualne zmeny, pridanie ikoniek dreva a toothpickov a penazi
