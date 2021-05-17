@@ -7,12 +7,20 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
 
 ## Funkcionality aplikácie:
 ### Este neimplementovane napady: (hore najvyssia priorita/najskor rozdelit na implementovanie do verzie):
-    -vizualne zmeny, pridanie ikoniek
-    -lifetime statistics
     -ine produkty
     -prestige (reset hry + nejaky significant upgrade co ostane po restarte)
+    
+## Verzia 3:
+### Juraj:
     -opravit bug (disabled tlacitko na kupenie sellera ked nema byt disabled lebo sa pouziva cena craftera na disablovanie)
-## Verzia 2:
+    -lifetime statistics pocitanie:
+        -long moneyMade
+        -int toothpicksCrafted
+        -int woodBought
+    -pridat dalsie upgrady par ktore pouzivaju lifetime statistics
+### Patrik:
+    -vizualne zmeny, pridanie ikoniek dreva a toothpickov a penazi
+## Verzia 2: (DONE)
 ### Juraj:
     -material (Drevo): - DONE
         -zobrazenie poctu dreva (sklad dreva ma kapacitu 100 na zaciatku) - DONE
