@@ -3,6 +3,7 @@ package sk.po.spse.lumberplanet;
 public class Game {
 
     private long money;
+    private long moneyMade;
     private long toothpicks;
     private long wood;
     private int vyrabac;
@@ -26,6 +27,7 @@ public class Game {
 
     public Game(int money, int toothpicks, int vyrabac, int predavac) {
         this.money = money;
+        this.moneyMade = money;
         this.toothpicks = toothpicks;
         this.vyrabac = vyrabac;
         this.predavac = predavac;
@@ -165,7 +167,7 @@ public class Game {
         }
         toothpicks = toothpicks - amount;
         money = money + (amount * toothpickPrice);
-
+        moneyMade += (amount * toothpickPrice);
     }
 
     public void sellToothpick() {
