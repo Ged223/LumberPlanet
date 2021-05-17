@@ -5,7 +5,9 @@ public class Game {
     private long money;
     private long moneyMade;
     private long toothpicks;
+    private long toothpicksCrafted;
     private long wood;
+    private long woodBought;
     private int vyrabac;
     private int predavac;
     private int vyrabacPrice;
@@ -34,6 +36,7 @@ public class Game {
         this.vyrabacPrice = 100;
         this.predavacPrice = 100;
         this.wood = 10;
+        this.woodBought = wood;
         this.craftButtonMod = 1;
         this.sellButtonMod = 1;
         this.vyrabacMod = 1;
@@ -41,6 +44,7 @@ public class Game {
         this.nextVyrabacPriceMod = 1.2;
         this.nextPredavacPriceMod = 1.2;
         this.toothpickPrice = 1;
+        this.toothpicksCrafted = 0;
         this.woodAmountBought = 2;
         this.lastFoundWood = System.currentTimeMillis();
         this.upgradesBought = new boolean[99];
@@ -141,6 +145,7 @@ public class Game {
             amount = wood;
         }
         toothpicks = toothpicks + amount;
+        toothpicksCrafted += amount;
         wood = wood - amount;
     }
 
@@ -196,6 +201,7 @@ public class Game {
     public void buyWood() {
         if (payMoney(1)) {//1 is the price of one wood buy
             wood = wood + woodAmountBought;
+            woodBought += woodAmountBought;
         }
     }
 
