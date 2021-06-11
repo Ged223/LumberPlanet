@@ -25,7 +25,7 @@ public class Game {
     private boolean[] upgradesBought;
     private int[] upgradesPrices;
     private String[] upgradesText;
-
+    private int crafterAndSellersNeededForWoodBuyUpgrade;
 
     public Game(int money, int toothpicks, int vyrabac, int predavac) {
         this.money = money;
@@ -46,6 +46,7 @@ public class Game {
         this.toothpickPrice = 1;
         this.toothpicksCrafted = 0;
         this.woodAmountBought = 2;
+        this.crafterAndSellersNeededForWoodBuyUpgrade = 1;
         this.lastFoundWood = System.currentTimeMillis();
         this.upgradesBought = new boolean[99];
         this.upgradesPrices = new int[]{
@@ -87,7 +88,7 @@ public class Game {
     public boolean isUpgradeVisible(int index) {
         switch (index) {
             case 0: //Wood bought: x2\nPrice: $100
-                return (vyrabac >= 1 && predavac >= 1);//condition for being able to buy upgrade0
+                return (vyrabac >= crafterAndSellersNeededForWoodBuyUpgrade && predavac >= crafterAndSellersNeededForWoodBuyUpgrade);//condition for being able to buy upgrade0
             case 1: //Manual crafting x2\nPrice: $200
                 return (vyrabac >= 2 && predavac >= 2);
             case 2: //Manual selling x2\nPrice: $300
@@ -111,7 +112,10 @@ public class Game {
         if (payMoney(upgradesPrices[index])) {
             switch (index) {
                 case 0: //Wood bought: x2\nPrice: $100
-                    woodAmountBought = woodAmountBought * 2; //effect of buying upgrade
+                    woodAmountBought = ((woodAmountBought * 2)/4)*3; //effect of buying upgrade
+                    crafterAndSellersNeededForWoodBuyUpgrade += 1;
+                    upgradesPrices[0] *= 2;
+                    upgradesText[0] = "Wood bought: x2\nPrice: " + upgradesPrices[0];//TODO sfuncknit menenie zobrazovania ceny na upgrade
                     break;
                 case 1: //Manual crafting x2\nPrice: $200
                     craftButtonMod = craftButtonMod * 2;
@@ -137,6 +141,7 @@ public class Game {
                     break;
             }
             upgradesBought[index] = true;
+            upgradesBought[0] = false;
         }
     }
 

@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         updateUpgradeButtons();
+        setUpgradeButtonsText();
     }
 
     private Button[] getUpgradeButtonsList(){
@@ -162,6 +163,8 @@ public class MainActivity extends AppCompatActivity {
 
             if (game.isUpgradeVisible(i)) {
                 button.setVisibility(View.VISIBLE);
+            }else{
+                button.setVisibility(View.GONE);
             }
             if (upgradesBought[i]) {
                 button.setVisibility(View.GONE);
