@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         Button[] buttons = getUpgradeButtonsList();
         String[] texts = game.getUpgradesText();
         buttons[0].setText(texts[0]);
-        
+
         updateUpgradeButtons();
 
 

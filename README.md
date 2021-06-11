@@ -6,9 +6,9 @@ Juraj Seman, Patrik Ištván
 Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hráč trávi čas klikaním na tlačidlo aby vyrobil výrobok, pozeraním na čísla a kupovaním vylepšení a výrobných materiálov za zarobené peniaze.
 
 ## Funkcionality aplikácie:
-### Este neimplementovane napady: (hore najvyssia priorita/najskor rozdelit na implementovanie do verzie):
-    -ine produkty
-    -prestige (reset hry + nejaky significant upgrade co ostane po restarte)
+### TO-DO:
+    -urobit 30s reklamne video
+    -urobit prezentaciu podla poziadaviek
     
 ## Verzia 3:
 ### Juraj:
@@ -19,8 +19,10 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
         -long woodBought - DONE
     -z woodAmountBought x2 upgradu jednorazoveho urobit opakovaci - DONE
     -pridat dalsie upgrady par ktore pouzivaju lifetime statistics
+	-ak moneyMade >= 1000 tak money += 10000, popis: Darcek od sponzora: $10,000 - DONE
+	-ak woodBought >= 100 tak wood += 1000, popis: Bonus free wood for 100 orders
 ### Patrik:
-    -vizualne zmeny, pridanie ikoniek dreva a toothpickov a penazi
+    -vizualne zmeny, pridanie ikoniek dreva, toothpickov, penazi
     -lifetime statistics zobrazenie pre hraca
         -moneyMade
         -toothpicksCrafted
