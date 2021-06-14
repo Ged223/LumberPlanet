@@ -20,13 +20,14 @@ Clicker/Idle štýl hry, kde vyrábaš a predávaš rôzne výrobky z dreva. Hr�
     -z woodAmountBought x2 upgradu jednorazoveho urobit opakovaci - DONE
     -pridat dalsie upgrady par ktore pouzivaju lifetime statistics
 	-ak moneyMade >= 1000 tak money += 10000, popis: Darcek od sponzora: $10,000 - DONE
-	-ak woodBought >= 100 tak wood += 1000, popis: Bonus free wood for 100 orders
+	-ak woodBought >= 100 tak wood += 1000, popis: Bonus free wood for 100 orders - DONE
 ### Patrik:
-    -vizualne zmeny, pridanie ikoniek dreva, toothpickov, penazi
-    -lifetime statistics zobrazenie pre hraca
-        -moneyMade
-        -toothpicksCrafted
-        -woodBought
+    -vizualne detaily - DONE
+    -pridanie ikonky dreva - DONE
+    -pridanie ikonky penazi - DONE
+    -pridanie ikonky upgrades - DONE
+    -pridanie ikonky toothpick - DONE
+    -pozadie drevo aplikacie celej - DONE
 ## Verzia 2: (DONE)
 ### Juraj:
     -material (Drevo): - DONE
