@@ -105,10 +105,10 @@ public class MainActivity extends AppCompatActivity {
         long currentMoney = game.getMoney();
 
         TextView moneyText = findViewById(R.id.moneyText);
-        moneyText.setText("$" + game.getMoney());
+        moneyText.setText("" + game.getMoney());
 
         TextView toothpicksText = findViewById(R.id.toothpicksText);
-        toothpicksText.setText("Toothpicks: " + game.getToothpicks());
+        toothpicksText.setText("" + game.getToothpicks());
 
         TextView vyrabacText = findViewById(R.id.vyrabacText);
         vyrabacText.setText("Crafter: " + game.getVyrabac()+" ("+(game.getVyrabacMod()*game.getVyrabac())+")");
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
         buyPredavac.setEnabled(currentMoney >= game.getPredavacPrice());
 
         TextView woodText = findViewById(R.id.woodText);
-        woodText.setText("Wood: " + game.getWood());
+        woodText.setText("" + game.getWood());
 
         Button findWoodButton = findViewById(R.id.findWoodButton);
         if (!findWoodButton.isEnabled() && game.getLastFoundWood() + 5000 < System.currentTimeMillis()) {
