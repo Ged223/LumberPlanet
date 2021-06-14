@@ -221,33 +221,6 @@
                     android:tag="4"
                     android:textAllCaps="false"
                     android:visibility="gone" />
-                <Button
-                    android:id="@+id/upgrade5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:onClick="buyUpgrade"
-                    android:tag="5"
-                    android:textAllCaps="false"
-                    android:visibility="gone" />
-                <Button
-                    android:id="@+id/upgrade6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:onClick="buyUpgrade"
-                    android:tag="6"
-                    android:textAllCaps="false"
-                    android:visibility="gone" />
-                <Button
-                    android:id="@+id/upgrade7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:onClick="buyUpgrade"
-                    android:tag="7"
-                    android:textAllCaps="false"
-                    android:visibility="gone" />
 
 
 
