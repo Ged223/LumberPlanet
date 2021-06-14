@@ -55,7 +55,6 @@ public class Game {
                 300,
                 1000,
                 0,
-                0,
         };//here set prices for upgrades
         this.upgradesText = new String[]{
                 "Wood bought: x2\nPrice: " + upgradesPrices[0],
@@ -63,7 +62,6 @@ public class Game {
                 "Manual selling x2\nPrice: " + upgradesPrices[2],
                 "Crafter and Seller 200%: " + upgradesPrices[3],
                 "Gift from sponsor: $10,000" + upgradesPrices[4],
-                "Bonus free wood for 100 orders" + upgradesPrices[5],
         };
     }
 
@@ -87,14 +85,12 @@ public class Game {
                 return (vyrabac >= crafterAndSellersNeededForWoodBuyUpgrade && predavac >= crafterAndSellersNeededForWoodBuyUpgrade);//condition for being able to buy upgrade0
             case 1: //Manual crafting x2\nPrice: $200
                 return (vyrabac >= 2 && predavac >= 2);
-            case 2: //Manual selling x2\nPrice: $3 00
+            case 2: //Manual selling x2\nPrice: $300
                 return (vyrabac >= 3 && predavac >= 3);
             case 3:
                 return (vyrabac >= 6 && predavac >=6);
             case 4:
                 return (moneyMade >= 1000);
-            case 5:
-                return (woodBought >= 100);
             default:
                 return false;
         }
@@ -121,9 +117,6 @@ public class Game {
                     break;
                 case 4:
                     money += 10000;
-                    break;
-                case 5:
-                    wood += 1000;
                     break;
             }
             upgradesBought[index] = true;
