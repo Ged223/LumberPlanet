@@ -53,6 +53,10 @@ public class Game {
                 100,
                 200,
                 300,
+                100,
+                100,
+                100,
+                100,
                 1000,
                 0,
                 0,
@@ -61,9 +65,12 @@ public class Game {
                 "Wood bought: x2\nPrice: " + upgradesPrices[0],
                 "Manual crafting x2\nPrice: " + upgradesPrices[1],
                 "Manual selling x2\nPrice: " + upgradesPrices[2],
-                "Crafter and Seller 200%: " + upgradesPrices[3],
-                "Gift from sponsor: $10,000" + upgradesPrices[4],
-                "Bonus free wood for 100 orders" + upgradesPrices[5],
+                "Wood bought: x2\nPrice: " + upgradesPrices[3],
+                "Wood bought: x2\nPrice: " + upgradesPrices[4],
+                "Wood bought: x2\nPrice: " + upgradesPrices[5],
+                "Wood bought: x2\nPrice: " + upgradesPrices[6],
+                "Crafter and Seller 200%: " + upgradesPrices[7],
+                "Gift from sponsor: $10,000" + upgradesPrices[8],
         };
     }
 
@@ -89,12 +96,18 @@ public class Game {
                 return (vyrabac >= 2 && predavac >= 2);
             case 2: //Manual selling x2\nPrice: $3 00
                 return (vyrabac >= 3 && predavac >= 3);
-            case 3:
+            case 3: //Wood bought: x2\nPrice: $500
+                return (vyrabac >= 2 && predavac >= 2);
+            case 4: //Wood bought: x2\nPrice: $500
+                return (vyrabac >= 3 && predavac >= 3);
+            case 5: //Wood bought: x2\nPrice: $500
+                return (vyrabac >= 4 && predavac >= 4);
+            case 6: //Wood bought: x2\nPrice: $500
+                return (vyrabac >= 5 && predavac >= 5);
+            case 7:
                 return (vyrabac >= 6 && predavac >=6);
-            case 4:
+            case 8:
                 return (moneyMade >= 1000);
-            case 5:
-                return (woodBought >= 100);
             default:
                 return false;
         }
@@ -115,15 +128,24 @@ public class Game {
                 case 2: //Manual selling x2\nPrice: $200
                     sellButtonMod = sellButtonMod * 2;
                     break;
-                case 3:
+                case 3: //Wood bought: x2\nPrice: $500
+                    woodAmountBought = woodAmountBought * 2;
+                    break;
+                case 4: //Wood bought: x2\nPrice: $500
+                    woodAmountBought = woodAmountBought * 2;
+                    break;
+                case 5: //Wood bought: x2\nPrice: $500
+                    woodAmountBought = woodAmountBought * 2;
+                    break;
+                case 6: //Wood bought: x2\nPrice: $500
+                    woodAmountBought = woodAmountBought * 2;
+                    break;
+                case 7:
                     vyrabacMod = vyrabacMod*2;
                     predavacMod = predavacMod*2;
                     break;
-                case 4:
+                case 8:
                     money += 10000;
-                    break;
-                case 5:
-                    wood += 1000;
                     break;
             }
             upgradesBought[index] = true;
