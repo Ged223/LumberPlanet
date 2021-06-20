@@ -104,7 +104,7 @@ public class Game {
                     woodAmountBought = ((woodAmountBought * 2)/4)*3; //effect of buying upgrade
                     crafterAndSellersNeededForWoodBuyUpgrade += 1;
                     upgradesPrices[0] *= 2;
-                    upgradesText[0] = "Wood bought: x2\nPrice: " + upgradesPrices[0];//TODO sfuncknit menenie zobrazovania ceny na upgrade
+                    upgradesText[0] = "Wood bought: x2\nPrice: " + upgradesPrices[0];
                     break;
                 case 1: //Manual crafting x2\nPrice: $200
                     craftButtonMod = craftButtonMod * 2;
