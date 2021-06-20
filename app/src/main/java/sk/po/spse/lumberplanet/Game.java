@@ -101,7 +101,7 @@ public class Game {
         if (payMoney(upgradesPrices[index])) {
             switch (index) {
                 case 0: //Wood bought: x2\nPrice: $100
-                    woodAmountBought = ((woodAmountBought * 2)/4)*3; //effect of buying upgrade
+                    woodAmountBought *= 2; //effect of buying upgrade
                     crafterAndSellersNeededForWoodBuyUpgrade += 1;
                     upgradesPrices[0] *= 2;
                     upgradesText[0] = "Wood bought: x2\nPrice: " + upgradesPrices[0];
